@@ -30,6 +30,36 @@ The dataset used for this project is the **PlantVillage Dataset**, which contain
 ---
 
 
+## 📅 Week 2 Task
+
+### 🔹 Model Training and Evaluation
+In Week 2, the focus was on **training and evaluating the deep learning model** using the prepared dataset. The following steps were carried out:
+
+- **Image Preprocessing:**  
+  - Loaded and augmented training and validation images.  
+  - Normalized pixel values to improve convergence.  
+
+- **Model Architecture:**  
+  - Built a CNN model with multiple convolutional, pooling, and dense layers.  
+  - Included dropout layers to prevent overfitting.  
+
+- **Model Compilation:**  
+  - Used `Adam` optimizer and `categorical_crossentropy` loss function.  
+  - Tracked metrics like `accuracy` during training.  
+
+- **Model Training:**  
+  - Trained the model using training data for multiple epochs.  
+  - Monitored training and validation accuracy/loss.  
+
+- **Evaluation and Saving:**  
+  - Evaluated performance on validation data.  
+  - Saved the trained model for deployment and future inference.
+
+📘 *All training and evaluation steps are demonstrated in the `model_training.ipynb` notebook.*
+
+---
+
+
 ## 🧑‍💻 Author
 **Akassh M**  
 [Portfolio](https://akassh-m-portfolio.vercel.app) | [GitHub](https://github.com/AKASSH-M) | [LinkedIn](https://www.linkedin.com/in/akassh-m-b0a339307/)
