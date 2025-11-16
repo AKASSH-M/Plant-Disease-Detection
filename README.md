@@ -59,6 +59,47 @@ In Week 2, the focus was on **training and evaluating the deep learning model** 
 
 ---
 
+## 📅 Week 3 — Full Web Application Development (Frontend + Backend + Integration)
+
+### 🌐 **1. Backend – FastAPI (Python)**
+- Created a clean backend structure inside `/backend`
+- Implemented `/predict/` endpoint
+- TensorFlow model loads once for efficiency
+- Preprocessing pipeline before inference
+- Deletes temporary files after prediction
+- Deployed on Render  
+API URL:
+```
+https://plant-disease-detection-389o.onrender.com/predict/
+```
+
+---
+
+### 🎨 **2. Frontend – React + Vite + TailwindCSS**
+- Drag & drop image upload  
+- Live image preview  
+- Predict button with loading animation  
+- Shows plant name, disease, confidence bar  
+- Healthy / Affected result card  
+- Error card for unrecognized images  
+- Added popup modal listing **all 38 supported diseases**
+
+Deployed on Vercel:  
+https://plant-ai-pi.vercel.app/
+
+---
+
+### 🔗 **3. Full Integration**
+Frontend communicates with backend using:
+```js
+fetch(`${API_URL}/predict/`, { method: "POST", body: formData });
+```
+
+Supports both development & production via environment variables.
+
+---
+
+
 
 ## 🧑‍💻 Author
 **Akassh M**  
