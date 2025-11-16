@@ -103,7 +103,7 @@ const App = () => {
     formData.append("file", file);
 
     try {
-      const res = await fetch(`${API_URL}/predict/`, {
+      const res = await fetch("https://plant-disease-detection-389o.onrender.com/predict/", {
         method: "POST",
         body: formData,
       });

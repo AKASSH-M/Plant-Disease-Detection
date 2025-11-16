@@ -2,7 +2,7 @@ from fastapi import FastAPI , UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
 import shutil
 import os
-
+from tensorflow.keras.models import load_model as lm
 from utils.predict import predict_disease
 
 app = FastAPI()
@@ -14,6 +14,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+model_path = "model/plant_disease_detection.keras"
+model = lm(model_path)
 
 @app.post("/predict/")
 async def predict(file: UploadFile = File(...)):
@@ -61,9 +63,9 @@ async def predict(file: UploadFile = File(...)):
     'Tomato___Tomato_Yellow_Leaf_Curl_Virus',
     'Tomato___Tomato_mosaic_virus',
     'Tomato___healthy']
-        model_path = "model/plant_disease_detection.keras"
+        
 
-        Class , confidence = predict_disease(model_path , file_location , class_names)
+        Class , confidence = predict_disease(model, file_location , class_names)
         plant , disease = Class.split("___")
         disease = disease.replace("_" , " ")
         affected = disease != "healthy"
